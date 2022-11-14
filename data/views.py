@@ -1,19 +1,51 @@
 from django.shortcuts import render
 
-from .models import MovieTitles, Movie
+from .models import MovieTitles, Movie, Music_data, Music_content
 
 import random
-import os
-import sys
 import requests
-import pandas as pd
 import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-def get_titles(request):
+#조회하기
+#def get_user_contents(user_id):
+    #user = User.objects.get(id = user_id)
+    #movies = user.movie.all()
+    #musics = user.music.all()
+    #contents = movies | musics
+    #contents = contents.order_by("-date")
+    #return contents
+
+#새로 만들기
+# def create_contens(user_id):
+#     #user = User.objects.get(id = user_id)
+#     num = random.randint(0,1)
+#     if num == 0 :
+#         new = Movie.objects.create()
+#         data = get_movie()
+#         #new.user = user
+#         new.title = data['title']
+#         new.image = data['image']
+#         new.director = data['director']
+#         new.link = data["link"]
+#         new.actors = data['actors']
+#         new.year = data['year']
+#         new.rating = data['rating']
+#         new.save()
+#     else:
+#         new = Movie.objects.create()
+#         data = get_music()
+#         #new.user = user
+#         new.title = data['title']
+#         new.image = data['image']
+#         new.artist = data['artist']
+#         new.link = data["link"]
+#         new.save()
+
+def get_titles():
     browser = webdriver.Chrome("chromedriver.exe")
     browser.get("https://www.netflix.com/browse")
     browser.maximize_window()
@@ -59,34 +91,87 @@ def get_titles(request):
         new.save()
 
     browser.close()
-    return render(request, "test.html")
 
-def get_content(request):
+def get_movie():
+    while True:
+        client_id = "WBizd3AjzRS6rm8IoYHJ"
+        client_secret = "ptArHpcM6x"
+
+        num = random.randint(1,300)
+        title = MovieTitles.objects.get(id = num).title
+
+        movie = title
+        header_parms = {
+            "X-Naver-Client-Id" : client_id,
+            "X-Naver-Client-Secret" : client_secret
+        }
+        url = f"https://openapi.naver.com/v1/search/movie.json?query={movie}"
+        res = requests.get(url,headers=header_parms)
+        data = res.json()
+        # 있는지 검사하기
+        
+        if data['items']:
+            break
     
-    client_id = "WBizd3AjzRS6rm8IoYHJ"
-    client_secret = "ptArHpcM6x"
-
-    num = random.randint(0,300)
-    title = MovieTitles.objects.get(id = num).title
-
-    movie = title
-    header_parms = {
-        "X-Naver-Client-Id" : client_id,
-        "X-Naver-Client-Secret" : client_secret
-    }
-    url = f"https://openapi.naver.com/v1/search/movie.json?query={movie}"
-    res = requests.get(url,headers=header_parms)
-    data = res.json()
-    # 있는지 검사하기
-
     title = data['items'][0]['title'].strip("</b>")
-    print(title)
+    title = title.replace("<b>","")
+    title = title.replace("</b>","")
+
+    image = data['items'][0]['image']
     link = data['items'][0]['link']
     date = data['items'][0]['pubDate']
     director = data['items'][0]['director'].split("|")[0]
-    print(director)
-    
+    director = director.replace("<b>","")
+    director = director.replace("</b>","")
+
     actors = data['items'][0]['actor'].split("|")[:-1]
+    for actor in actors:
+        actr = actr + actor + " "
     rating = float(data['items'][0]['userRating'])
 
-    return render(request, "test.html")
+    context = {
+        "title" : title,
+        "image" : image,
+        "link" : link,
+        "date" : date,
+        "director" : director,
+        "actors" : actr,
+        "rating" : rating,
+    }
+    return context
+
+def music_data():
+    browser = webdriver.Chrome("chromedriver.exe")
+    browser.get("https://www.melon.com/mymusic/dj/mymusicdjplaylistview_inform.htm?plylstSeq=452125047#params%5BplylstSeq%5D=452125047&po=pageObj&startIndex=1")
+    browser.maximize_window()
+
+    for i in range (0,51):
+        new = Music_data.objects.create()
+        new.title = browser.find_element(By.XPATH,'//*[@id="frm"]/div/table/tbody/tr['+str(i)+']/td[5]/div/div/div[1]/span/a').text
+        try:
+            artist = browser.find_element(By.XPATH,'//*[@id="frm"]/div/table/tbody/tr['+str(i)+']/td[5]/div/div/div[2]/a').text
+            new.artist = artist
+        except:
+            new.artist = "Various Artist"
+        new.image = browser.find_element(By.XPATH,'//*[@id="frm"]/div/table/tbody/tr['+str(i)+']/td[3]/div/a/img').get_attribute("src")
+        browser.find_element(By.XPATH,'//*[@id="frm"]/div/table/tbody/tr['+str(i)+']/td[3]/div/a').click()
+        time.sleep(1)
+        new.link = browser.current_url
+        new.save()
+        browser.back()
+        time.sleep(1)
+
+    browser.close()
+
+def get_music():
+    num = random.randint(1,50)
+    new = Music_data.objects.get(id = num)
+
+    context = {
+        "id" : new.id,
+        "title" : new.title,
+        "artist" : new.artist,
+        "image" : new.image,
+        "link" : new.link,
+    }
+    return context   
