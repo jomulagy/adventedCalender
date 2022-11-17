@@ -7,6 +7,9 @@
 *.pyc
 __pycache__/
 local_settings.py
+chromedriver.exe
+secrets.json
+test.html
 # db.sqlite3
 # db.sqlite3-journal
 venv/

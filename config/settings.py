@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'data',
+    'merry_day',
     
     'allauth',
     'allauth.account',

@@ -1,49 +1,75 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
 
 from .models import MovieTitles, Movie, Music_data, Music_content
 
 import random
 import requests
 import time
+from datetime import datetime
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
+#메인
+def home(request):
+    return render(request, "test.html")
 #조회하기
-#def get_user_contents(user_id):
-    #user = User.objects.get(id = user_id)
-    #movies = user.movie.all()
-    #musics = user.music.all()
-    #contents = movies | musics
-    #contents = contents.order_by("-date")
-    #return contents
+def get_user_content(user_id, date):
+    user = User.objects.get(id = user_id)
+    if user.Movie.filter(date__day = str(date)).exists():
+        content = user.Movie.filter(date__day = str(date))[0]
+        context = {
+            "type" : "movie",
+            "image" : content.image,
+            "title" : content.title,
+            "director" : content.director,
+            "rating" : content.rating,
+            "link" : content.link,
+        }
+        
+    elif user.Music.filter(date__day = str(date)).exists():
+        content = user.Music.filter(date__day = str(date))[0]
+        context = {
+            "type" : "music",
+            "image" : content.image,
+            "title" : content.title,
+            "director" : content.director,
+            "link" : content.link,
+        }
+    
+    return context
 
 #새로 만들기
-# def create_contens(user_id):
-#     #user = User.objects.get(id = user_id)
-#     num = random.randint(0,1)
-#     if num == 0 :
-#         new = Movie.objects.create()
-#         data = get_movie()
-#         #new.user = user
-#         new.title = data['title']
-#         new.image = data['image']
-#         new.director = data['director']
-#         new.link = data["link"]
-#         new.actors = data['actors']
-#         new.year = data['year']
-#         new.rating = data['rating']
-#         new.save()
-#     else:
-#         new = Movie.objects.create()
-#         data = get_music()
-#         #new.user = user
-#         new.title = data['title']
-#         new.image = data['image']
-#         new.artist = data['artist']
-#         new.link = data["link"]
-#         new.save()
+def create_contents(user_id):
+    today = datetime.today()
+    user = User.objects.get(id = user_id)
+    if Movie.objects.filter(user = user, date = today)!= None or Music_content.objects.filter(user = user, date = today) != None:
+        return
+    num = random.randint(0,1)
+    if num == 0 :
+        new = Movie()
+        data = get_movie()
+        new.user = user 
+        new.title = data['title']
+        new.image = data['image']
+        new.director = data['director']
+        new.link = data["link"]
+        new.actors = data['actors']
+        new.year = data['date']
+        new.rating = data['rating']
+        new.save()
+    else:
+        new = Music_content()
+        data = get_music()
+        new.user = user
+        new.title = data['title']
+        new.image = data['image']
+        new.director = data['artist']
+        new.link = data["link"]
+        new.save()
+    return
 
 def get_titles():
     browser = webdriver.Chrome("chromedriver.exe")
@@ -92,7 +118,9 @@ def get_titles():
 
     browser.close()
 
+
 def get_movie():
+    actr = ''
     while True:
         client_id = "WBizd3AjzRS6rm8IoYHJ"
         client_secret = "ptArHpcM6x"
