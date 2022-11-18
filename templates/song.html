@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://https://fonts.google.com/specimen/IBM+Plex+Mono?query=IBM+Plex+Mono" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #193105;
+            font-family: 'Yeseva One', cursive;
+            color: #FFFFFF;
+        }
+        section{
+            margin: 0 auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-top: 67px;
+            width: 375px;
+            height: 812px;
+            text-align: center;
+            background-color: #193105;
+        }
+        div{
+            margin: 0 auto;
+        }
+        .song-title{
+            width: 347px;
+            height: 99px;
+            font-size: 40px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .song-img{
+            margin-top: 13px;
+            width: 346px;
+            height: 414px;
+        }
+        .up-hr{
+            margin-top: 30px;
+            width: 345px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+        .song-name{
+            margin-top:3px;
+            width: 191px;
+            height: 50px;
+            font-size: 20px;
+        }
+        .down-hr{
+            margin-top: 3px;
+            width: 345px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+        .song-btn{
+            display: inline-block;
+            margin-top: 38px;
+            margin-right: 55px;
+        }
+        #back{
+            display: inline-block;
+            text-decoration: underline;
+            margin-right: 55px;
+            /* 영화일 경우 폰트 삭제 */
+            font-family: 'IBM Plex Mono'; 
+        }
+        #test{
+            display: inline-block;
+            margin-top: 77px;
+            text-decoration: underline;
+            /* 영화일 경우 폰트 삭제 */
+            font-family: 'IBM Plex Mono';
+        }
+        .song-singer{
+            font-size: 13px;
+        }
+        hr{
+            width: 338px;
+            padding: 0.3px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+
+        /* 영화일 경우 별점 css */
+        /* .star{
+            display: inline-block;
+            margin-top: 38px;
+            margin-right: 55px;
+        } */
+    </style>
+    <script>
+        function shareClick(){
+            if(plain.style.display=="none") {plain.style.display=''; test.innerText = 'share.html'} else {plain.style.display = 'none'; test.innerText = 'open'}
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <hr>
+        <div class="song-title">Today's<br>recommendation</div>
+        <hr>
+        <div class="song-img"><img src="media/song.png" alt="dd"></div>
+        <div class="up-hr"><hr></div>
+        <div class="song-name">song title</div>
+        <div class="song-singer">-singer-</div>
+        <div class="down-hr"><hr></div>
+        <div id="back">Back</div>
+        <div class="song-btn">
+            <img src="media/btn.png">
+        </div>
+
+        <!-- <div class="star"> //영화일 경우 별점 
+            <img style="display: inline-block;width: 20px;height: 20px;" src="media/star3.png" alt="left">
+            <div style="display: inline-block;margin-bottom:10px; padding-right: 5px;"><p style="display: inline-block">3.3</p></div>
+        </div> -->
+
+        <span id="test" style="CURSOR: hand" onclick="shareClick()">share</span>
+
+        <div id="plain" style="display: none">
+        <a href="share.html"></a>
+</div>
+    </section>
+</body>
+</html>

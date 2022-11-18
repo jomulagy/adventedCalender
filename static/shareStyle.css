@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
+* {
+  margin : 0;
+  padding : 0;
+  background-color: #193105;
+  box-sizing: border-box;
+}
+
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  width: 375px;
+  height: 165px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  justify-content: space-around;
+  align-content: space-around;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.share_font {
+  align-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000000;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size: 50;
+  text-align: center;
+}
+
+hr {
+  position: absolute;
+  color: #000000;
+  width: 100%;
+}
+
+.top {
+  background-color: #ffffff;
+}
+
+.text_0 {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size: 17px;
+  position: absolute;
+  top: 2%;
+  left: 45%;
+  background-color: #ffffff;
+}
+
+.bottom {
+  width: 375px;  
+  background-color: #ffffff;
+}
+
+.kakao_icon {
+  margin-left: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  display: inline-block;
+}
+
+.copy_link {
+  display: inline-block;
+  margin-left: 30px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.more_icon {
+  margin-left: 30px;
+  background-color: #ffffff;
+  text-align: center;
+  display: inline-block;
+}
+
+.image_1 {
+  background-color: #ffffff;
+}
+
+.image_2 {
+  background-color: #ffffff;
+}
+
+.image_3 {
+  background-color: #ffffff;
+}
+
+.text_1 {
+  background-color: #ffffff;
+}
+
+.text_2 {
+  background-color: #ffffff;
+}
+
+.text_3 {
+  background-color: #ffffff;
+}
