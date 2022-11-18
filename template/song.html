@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
     <link href="https://https://fonts.google.com/specimen/IBM+Plex+Mono?query=IBM+Plex+Mono" rel="stylesheet">
-    <title>Document</title>
+    <title>Merry Day</title>
     <style>
         body{
             background-color: #193105;
@@ -105,14 +106,14 @@
         <hr>
         <div class="song-title">Today's<br>recommendation</div>
         <hr>
-        <div class="song-img"><img src="../static/img/song.png" alt="dd"></div>
+        <div class="song-img"><img src="{% static 'img/song.png' %}" alt="dd"></div>
         <div class="up-hr"><hr></div>
         <div class="song-name">song title</div>
         <div class="song-singer">-singer-</div>
         <div class="down-hr"><hr></div>
         <div id="back" onClick="location.href='메인화면.html'">Back</div>
         <div class="song-btn">
-            <img src="../static/img/btn.png">
+            <img src="{% static 'img/btn.png' %}">
         </div>
 
         <!-- <div class="star"> //영화일 경우 별점 

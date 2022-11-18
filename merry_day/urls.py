@@ -5,6 +5,6 @@ from .views import *
 app_name = 'merry_day'
 
 urlpatterns = [
-    path("/", main, name = "main"),
+    path("", main, name = "main"),
     path("card_detail/<int:date>/", card_detail, name = "detail")
 ]

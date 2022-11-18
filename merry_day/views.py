@@ -8,11 +8,10 @@ def main(request):
     return render(request, "test.html")
 
 def card_detail(request, date):
-    #user = request.user
-    user = User.objects.get(id = 1)
+    user = request.user
     today = datetime.today().day
     if today == date:
         create_contents(user.id)
-    context = get_user_content(user.id,date)
+    context = get_user_content(user.id, date)
     print(context)
-    return render(request, "test.html", context)
+    return render(request, "song.html", context)
