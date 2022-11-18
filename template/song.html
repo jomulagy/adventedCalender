@@ -106,25 +106,29 @@
         <hr>
         <div class="song-title">Today's<br>recommendation</div>
         <hr>
-        <div class="song-img"><img src="{% static 'img/song.png' %}" alt="dd"></div>
+        <div class="song-img"><img src="{{image}}" alt="dd"></div>
         <div class="up-hr"><hr></div>
-        <div class="song-name">song title</div>
-        <div class="song-singer">-singer-</div>
+        <div class="song-name">{{title}}</div>
+        <div class="song-singer">{{director}}</div>
         <div class="down-hr"><hr></div>
-        <div id="back" onClick="location.href='메인화면.html'">Back</div>
-        <div class="song-btn">
-            <img src="{% static 'img/btn.png' %}">
-        </div>
-
-        <!-- <div class="star"> //영화일 경우 별점 
-            <img style="display: inline-block;width: 20px;height: 20px;" src="..static/img/star3.png" alt="left">
-            <div style="display: inline-block;margin-bottom:10px; padding-right: 5px;"><p style="display: inline-block">3.3</p></div>
-        </div> -->
-
+        <div id="back" onClick="location.href='{% url 'main' %}'">Back</div>
+        {% if type == "music" %}
+            <div class="song-btn">
+                <a href = "{{link}}">
+                    <img src="{% static 'img/btn.png' %}">
+                </a>
+                
+            </div>
+        {% else %}
+            <div class="star"> 
+                <img style="display: inline-block;width: 20px;height: 20px;" src="{% static 'img/star3.png' %}" alt="left">
+                <div style="display: inline-block;margin-bottom:10px; padding-right: 5px;"><p style="display: inline-block">{{rating}}</p></div>
+            </div>
+        {% endif %}
         <span id="test" style="CURSOR: hand" onclick="shareClick()">share</span>
 
         <div id="plain" style="display: none">
-        <a href="share.html"></a>
+    
 </div>
     </section>
 </body>
