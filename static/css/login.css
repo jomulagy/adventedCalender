@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+* {
+  margin : 0;
+  padding : 0;
+  background-color: #193105;
+}
+
+/*스크롤바 감추기, 스크롤 기능은 유지*/
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  overflow: hidden; /*넘친 콘텐츠 보이지 않게 하기*/
+  justify-content: center;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.font_wrap {
+  position: relative;
+}
+
+.door_image {
+  width: 375px;
+  height: 812px;
+}
+
+.date {
+  font-family: 'Yeseva One', cursive;
+  text-align: center;
+  font-size: 15pt;
+  color: #ffffff;
+  
+  position: absolute;
+  top: 19.3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  font-family: 'Yeseva One', cursive;
+  text-align: center;
+  font-size: 36pt;
+  color: #ffffff;
+
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.kakao_login {
+  position: absolute;
+  width: 183px;
+  height: 45px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
