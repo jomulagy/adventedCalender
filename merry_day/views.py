@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 
 from datetime import datetime
 from data.views import create_contents, get_user_content
+
+def login(request):
+    return render(request, "login.html")
+    
 def main(request):
 
     return render(request, "test.html")

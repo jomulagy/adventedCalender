@@ -1,3 +1,7 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -6,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
 
 </head>
@@ -18,7 +22,7 @@
   <div class="container">
 
     <div class="font_wrap">
-      <img src="images/login_4x.png" class="door_image">
+      <img src="{% static 'img/login_4x.png' %}" class="door_image">
   
       <!-- 글씨 _ 1225 -->
       <p class="date">1225</p>
@@ -27,7 +31,10 @@
       <p class="logo">Merry <br> Christmas! </p>
 
       <!-- 카카오 로그인 -->
-        <img src="images/kakao_4x.png" class="kakao_login">
+      <a href = "{% provider_login_url 'kakao' %}">
+        <img src="{% static 'img/kakao_4x.png' %}" class="kakao_login">
+      </a>
+
 
     </div>
   </div>
