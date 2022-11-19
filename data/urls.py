@@ -6,5 +6,6 @@ app_name = 'data'
 
 urlpatterns = [
     path("main", home, name = "home"),
-    path("new",create_contents,name = "create_contents")
+    path("new",create_contents,name = "create_contents"),
+    path("crawling/",music_data,name = "music_data")
 ]

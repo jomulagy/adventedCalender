@@ -15,20 +15,35 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
+.background {
+  background-color: #193105;
+}
+
 .container {
+  background-color: #193105;
+
   width: 100%;
   height: 100%;
+
   width: 375px;
-  height: 165px;
+  height: 195px;
+
   margin: 0 auto;
   display: flex;
-  position: relative;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   overflow: hidden;
   justify-content: center;
   justify-content: space-around;
   align-content: space-around;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
 }
 
 .share_font {
@@ -39,6 +54,7 @@ body::-webkit-scrollbar {
   font-family: 'Sawarabi Gothic', sans-serif;
   font-size: 50;
   text-align: center;
+  font-weight: bold;
 }
 
 a {
@@ -49,6 +65,7 @@ a {
 hr {
   position: absolute;
   color: #000000;
+  background-color: #ffffff;
   width: 100%;
 }
 
@@ -56,11 +73,11 @@ hr {
   background-color: #ffffff;
 }
 
-.text_0 {
+.share_after {
   font-family: 'Sawarabi Gothic', sans-serif;
   font-size: 17px;
   position: absolute;
-  top: 2%;
+  top: 4%;
   left: 45%;
   background-color: #ffffff;
 }
@@ -70,26 +87,71 @@ hr {
   background-color: #ffffff;
 }
 
-.kakao_icon {
-  margin-left: 20px;
+.box1 {
+  position: absolute;
+  top: 32%;
+  left: 6%;
   background-color: #ffffff;
   text-align: center;
   float: left;
 }
 
-.copy_link {
-  margin-left: 30px;
+.box2 {
+  position: absolute;
+  top: 32%;
+  left: 30%;
   color: black;
   background-color: #ffffff;
   text-align: center;
   float: left;
 }
 
-.more_icon {
-  margin-left: 30px;
+.box3 {
+  position: absolute;
+  top: 32%;
+  left: 54%;
   background-color: #ffffff;
   text-align: center;
   float: left;
+}
+
+#popup {
+    display: none; /*숨기기*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+}
+
+#popupmenu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    background: #fff;
+}
+
+.exit {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%,0);
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #b2c6b7;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.share_before {
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
 }
 
 .image_1 {

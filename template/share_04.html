@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/share_04.css' %}">
+    <script>
+        const copyComplete = text => {
+          let url = "";
+          const textarea = document.createElement("textarea");
+          document.body.appendChild(textarea);
+          url = window.document.location.href;
+    
+          textarea.value = url;
+          textarea.select();
+          document.execCommand("copy");
+          console.log(textarea);
+          document.body.removeChild(textarea);
+          alert("클립보드에 복사되었습니다.");
+        
+      };
+      </script>
+    <script>
+        //<![CDATA[
+        $(document).ready(function() {
+            $(".share_before").click(function() {
+
+                $("#popup").fadeIn();
+
+            });
+            $(".exit").click(function() {
+
+                $("#popup").fadeOut();
+            });
+            $(".share_before").trigger("click");
+        });
+        //]]>
+    </script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="popup">
+    <div id="popmenu">
+
+  <section class="background">   
+    <div class="container">
+  
+        <div class="top">
+        <br>
+        <p class="share_after">share</p>
+        <br>
+        <hr class="line_1">
+        <br>
+        </div>
+          <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.1/kakao.min.js"
+          integrity="sha384-eKjgHJ9+vwU/FCSUG3nV1RKFolUXLsc6nLQ2R1tD0t4YFPCvRmkcF8saIfOZNWf/" crossorigin="anonymous"></script>
+      
+          <script>
+            Kakao.init('e89f881cbf282b77f5cd7d1514d260af'); //키 입력
+          </script>
+          
+          <div class="bottom">
+            <br><br><br>
+              <div class="box1">
+                <a id="kakaotalk-sharing-btn" class="image_1"  href="javascript:;">
+                    <img src="{% static 'img/image_1.png' %}" class="image_1"
+                    alt="80193252657f2b3da1d7a4f1fd84fd49">
+                    <p class="text_1">KakaoTalk</p>
+                  </a>  
+              </div>
+          </div>
+          <script>
+          Kakao.Share.createScrapButton({
+              container: '#kakaotalk-sharing-btn',
+              requestUrl: 'http://127.0.0.1:8000/', //공유하고자 하는 페이지 넣기
+          });
+          </script>
+      
+            <div class="box2">
+                <img src="{% static 'img/link.png' %}" class="image_2"
+                onclick="copyComplete();">
+                <p class="text_2">Copy Link</p>
+            </div>
+          
+            <div class="box3">
+              <img src="{% static 'img/more.png' %}" class="image_3">
+              <p class="text_3">More</p>
+            </div>
+            <br>
+            <div class="exit">닫기</div>
+            <br>
+          </div>
+        </div></div>
+      </section> 
+    
+    <div class="share_before">share</div>
+
+    </div>
+</body>
+</html>
