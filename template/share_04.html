@@ -59,38 +59,12 @@
             <br>
           </div>
 
-          <script>
-            Kakao.init('e89f881cbf282b77f5cd7d1514d260af'); //키 입력
-            function sendLinkKakao() {
-              Kakao.Link.sendDefault({
-                objectType: 'feed',
-                content: {
-                  title: '{{ title }}',
-                  description: "{{ 'Today's recommendation'|bs4process|truncatewords:15 }}",
-                  imageUrl: '{{ image|bs4imagepath|full_url }}',
-                  link: {
-                    mobileWebUrl: '{{ request.build_absolute_uri }}',
-                    webUrl: '{{ request.build_absolute_uri }}'
-                  }
-                },
-                buttons: [
-                  {
-                    title: '링크 열기',
-                    link: {
-                      mobileWebUrl: '{{ request.build_absolute_uri }}',
-                      webUrl: '{{ request.build_absolute_uri }}'
-                    }
-                  }
-                ]
-              });
-            }
-
-          </script>
+          
 
           <div class="bottom">
             <br><br><br>
             <div class="box1">
-              <a id="kakaotalk-sharing-btn" class="image_1" href="javascript:;">
+              <a id="kakaotalk-sharing-btn" class="image_1" href="javascript:sendLinkKakao();">
                 <img src="{% static 'img/image_1.png' %}" class="image_1" alt="80193252657f2b3da1d7a4f1fd84fd49">
                 <p class="text_1">KakaoTalk</p>
               </a>
@@ -118,5 +92,31 @@
 
   </div>
 </body>
+<script>
+  Kakao.init('e89f881cbf282b77f5cd7d1514d260af'); //키 입력
+  function sendLinkKakao() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '{{ title }}',
+        description: "Today's recommendation",
+        imageUrl: '{{ image}}',
+        link: {
+          mobileWebUrl: '{{ request.build_absolute_uri }}',
+          webUrl: '{{ request.build_absolute_uri }}'
+        }
+      },
+      buttons: [
+        {
+          title: '링크 열기',
+          link: {
+            mobileWebUrl: '{{ request.build_absolute_uri }}',
+            webUrl: '{{ request.build_absolute_uri }}'
+          }
+        }
+      ]
+    });
+  }
 
+</script>
 </html>
