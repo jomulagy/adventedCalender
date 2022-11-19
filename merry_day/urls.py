@@ -8,5 +8,5 @@ urlpatterns = [
     path("",login, name = "login"),
     path("main/", main, name = "main"),
     path("card_detail/<int:date>/", card_detail, name = "detail"),
-    path("share/",share,name = "share"),
+    path("share/<int:date>/",share,name = "share"),
 ]

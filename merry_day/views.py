@@ -19,5 +19,7 @@ def card_detail(request, date):
     context = get_user_content(user.id, date)
     return render(request, "song.html", context)
 
-def share(request):
-    return render(request, "share_04.html")
+def share(request, date):
+    user = request.user
+    context = get_user_content(user.id, date)
+    return render(request, "share_04.html", context)

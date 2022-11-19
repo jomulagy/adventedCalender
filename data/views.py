@@ -27,6 +27,7 @@ def get_user_content(user_id, date):
             "director" : content.director,
             "rating" : content.rating,
             "link" : content.link,
+            "date" : date,
         }
         
     elif user.Music.filter(date__day = str(date)).exists():
@@ -37,6 +38,7 @@ def get_user_content(user_id, date):
             "title" : content.title,
             "director" : content.director,
             "link" : content.link,
+            "date" : date,
         }
     
     return context
