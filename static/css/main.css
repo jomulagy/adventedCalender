@@ -10,6 +10,8 @@ body {
     height: 100%;
     justify-content: space-around;
     align-content: space-around;
+    margin-top: 67px;
+
 }
 
 .main_page {
@@ -30,7 +32,7 @@ body {
     position: absolute;
     display: flex;
     justify-content: center;
-    top: 61px;
+    top: 108px;
     border-left: 0;
     border-right: 0;
 }
@@ -42,7 +44,7 @@ body {
     position: absolute;
     display: flex;
     justify-content: center;
-    top: 185.99px;
+    top: 232.99px;
     border-left: 0;
     border-right: 0;
 }
@@ -54,7 +56,7 @@ body {
     position: absolute;
     display: flex;
     justify-content: center;
-    top: 205.99px;
+    top: 252.99px;
     border-left: 0;
     border-right: 0;
 }
@@ -66,7 +68,7 @@ body {
     position: absolute;
     display: flex;
     justify-content: center;
-    top: 757px;
+    top: 804px;
     border-left: 0;
     border-right: 0;
 }
@@ -80,7 +82,7 @@ body {
     line-height: 38px;
     text-align: center;
     color: #ffffff;
-    margin-top: 53px;
+    margin-top: 5px;
 }
 
 .writing_second {

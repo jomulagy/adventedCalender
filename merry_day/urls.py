@@ -5,7 +5,7 @@ from .views import *
 app_name = 'merry_day'
 
 urlpatterns = [
-    path("login/",login, name = "login"),
-    path("", main, name = "main"),
+    path("",login, name = "login"),
+    path("main/", main, name = "main"),
     path("card_detail/<int:date>/", card_detail, name = "detail")
 ]

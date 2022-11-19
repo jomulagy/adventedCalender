@@ -1,4 +1,7 @@
-{%if user.is_authoricated %}
-    <p>{{user.username}}</p>
-    <a href = "/account/logout"></a>
+{% if user.is_authenticated %}
+    <div style = "text-align: right; color : white; margin-top : 10px; margin-right : 20px;" >
+        {{user.username}} |
+        <a href = "/account/logout" style = "text-decoration : none; color : white;">로그아웃</a>
+    </div>
+    
 {% endif %}

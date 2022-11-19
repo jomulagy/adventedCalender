@@ -17,5 +17,4 @@ def card_detail(request, date):
     if today == date:
         create_contents(user.id)
     context = get_user_content(user.id, date)
-    print(context)
     return render(request, "song.html", context)
