@@ -45,9 +45,9 @@ def get_user_content(user_id, date):
 def create_contents(user_id):
     today = datetime.today()
     user = User.objects.get(id = user_id)
-
-    if Movie.objects.filter(user = user, date = today).exists() or Music_content.objects.filter(user = user, date = today).exists():
+    if Movie.objects.filter(user = user, date__day = today.day).exists() or Music_content.objects.filter(user = user, date__day = today.day).exists():
         return
+
     num = random.randint(0,1)
     if num == 0 :
         new = Movie()
@@ -169,12 +169,12 @@ def get_movie():
     }
     return context
 
-def music_data():
+def music_data(request):
     browser = webdriver.Chrome("chromedriver.exe")
     browser.get("https://www.melon.com/mymusic/dj/mymusicdjplaylistview_inform.htm?plylstSeq=452125047#params%5BplylstSeq%5D=452125047&po=pageObj&startIndex=1")
     browser.maximize_window()
 
-    for i in range (0,51):
+    for i in range (1,51):
         new = Music_data.objects.create()
         new.title = browser.find_element(By.XPATH,'//*[@id="frm"]/div/table/tbody/tr['+str(i)+']/td[5]/div/div/div[1]/span/a').text
         try:
@@ -182,8 +182,9 @@ def music_data():
             new.artist = artist
         except:
             new.artist = "Various Artist"
-        new.image = browser.find_element(By.XPATH,'//*[@id="frm"]/div/table/tbody/tr['+str(i)+']/td[3]/div/a/img').get_attribute("src")
         browser.find_element(By.XPATH,'//*[@id="frm"]/div/table/tbody/tr['+str(i)+']/td[3]/div/a').click()
+        new.image = browser.find_element(By.XPATH,'//*[@id="d_album_org"]/img').get_attribute("src")
+        
         time.sleep(1)
         new.link = browser.current_url
         new.save()
@@ -193,7 +194,7 @@ def music_data():
     browser.close()
 
 def get_music():
-    num = random.randint(1,50)
+    num = random.randint(58,108)
     new = Music_data.objects.get(id = num)
 
     context = {
