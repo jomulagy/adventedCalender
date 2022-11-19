@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    background-color: #223514;
+    font-family: 'Yeseva One', cursive;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.main_page {
+    background-color: hsl(93, 81%, 11%);
+    width: 375px;
+    height: 812px;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+}
+
+.line_first {
+    border: 0.458621px solid #fffefc;
+    width: 342px;
+    height: 1.83px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 61px;
+    border-left: 0;
+    border-right: 0;
+}
+
+.line_second {
+    border: 0.458621px solid #fffefc;
+    width: 342px;
+    height: 1.83px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 185.99px;
+    border-left: 0;
+    border-right: 0;
+}
+
+.line_third {
+    border: 0.458621px solid #fffefc;
+    width: 342px;
+    height: 1.83px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 205.99px;
+    border-left: 0;
+    border-right: 0;
+}
+
+.line_fourth {
+    border: 0.458621px solid #fffefc;
+    width: 342px;
+    height: 1.83px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 757px;
+    border-left: 0;
+    border-right: 0;
+}
+
+.writing_first {
+    display: flex;
+    justify-content: space-around;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32.8668px;
+    line-height: 38px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 53px;
+}
+
+.writing_second {
+    display: flex;
+    justify-content: space-around;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8.37055px;
+    line-height: 10px;
+    text-align: center;
+    color: #e3251b;
+    margin-top: -63px;
+}
+
+.writing_third {
+    display: flex;
+    justify-content: space-around;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 11px;
+}
+
+.writing_first p {
+    width: 213.63px;
+    height: 81.35px;
+}
+
+.writing_second p {
+    width: 146.48px;
+    height: 10.04px;
+}
+
+.box_first {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 28px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.box_second,
+.box_third,
+.box_fourth,
+.box_fifth {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.box_first img {
+    width: 66.04px;
+    height: 104.57px;
+}
+
+.box_second img {
+    width: 66.04px;
+    height: 104.57px;
+}
+
+.box_third img {
+    width: 66.04px;
+    height: 104.57px;
+}
+
+.box_fourth img {
+    width: 66.04px;
+    height: 104.57px;
+}
+
+.box_fifth img {
+    width: 66.04px;
+    height: 104.57px;
+}

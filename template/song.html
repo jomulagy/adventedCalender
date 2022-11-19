@@ -111,7 +111,7 @@
         <div class="song-name">{{title}}</div>
         <div class="song-singer">{{director}}</div>
         <div class="down-hr"><hr></div>
-        <div id="back" onClick="location.href='{% url 'main' %}'">Back</div>
+        <div id="back" onClick="location.href='{% url 'merry_day:main' %}'">Back</div>
         {% if type == "music" %}
             <div class="song-btn">
                 <a href = "{{link}}">
