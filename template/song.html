@@ -125,7 +125,9 @@
         <hr>
         <div class="song-title">Today's<br>recommendation</div>
         <hr>
-        <div class="song-img"><img src="{{image}}" style="width: 320px; height: 420px;" alt="dd"></div>
+
+        <div class="song-img"><img style="width:320px;height:420px;" src="{{image}}" alt="dd"></div>
+
         <div class="up-hr">
             <hr>
         </div>
@@ -135,7 +137,7 @@
             <hr>
         </div>
         <div style="display : flex; justify-content: space-between;">
-            <div id="back" onClick="location.href='{% url 'merry_day:main' %}'">Back</div>
+            <div id="back" style="cursor: pointer" onClick="location.href='{% url 'merry_day:main' %}'">Back</div>
             {% if type == "music" %}
             <div class="song-btn">
                 <a href="{{link}}">
@@ -152,7 +154,7 @@
                 </div>
             </div>
             {% endif %}
-            <span id="test" style="CURSOR: hand" onclick="shareClick()">share</span>
+            <span id="test"  style="cursor: pointer" onclick="shareClick()" >share</span>
         </div>
         <div id="plain" style="display: none">
 
