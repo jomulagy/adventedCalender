@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/share_02.css">
+  <title>Share</title>
+
+  <script>
+    const copyComplete = text => {
+      let url = "";
+      const textarea = document.createElement("textarea");
+      document.body.appendChild(textarea);
+      url = window.document.location.href;
+
+      textarea.value = url;
+      textarea.select();
+      document.execCommand("copy");
+      console.log(textarea);
+      document.body.removeChild(textarea);
+      alert("클립보드에 복사되었습니다.");
+    
+  };
+  </script>
+
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="top">
+  <br>
+  <p class="text_0">share</p>
+  <br>
+  <hr class="line_1">
+  <br>
+  </div>
+
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.1/kakao.min.js"
+  integrity="sha384-eKjgHJ9+vwU/FCSUG3nV1RKFolUXLsc6nLQ2R1tD0t4YFPCvRmkcF8saIfOZNWf/" crossorigin="anonymous"></script>
+
+  <script>
+  Kakao.init('c089c8172def97eb00c07217cae17495'); //키 입력
+  </script>
+
+  <div class="bottom">
+    <br>
+    <br>
+    <br>
+    <div class="kakao_icon">
+      <a id="kakaotalk-sharing-btn" class="image_1"  href="javascript:;">
+        <img src="images/image_1.png" class="image_1"
+        alt="80193252657f2b3da1d7a4f1fd84fd49">
+        <p class="text_1">KakaoTalk</p>
+      </a>  
+    </div>
+
+    <script>
+      Kakao.Share.createScrapButton({
+          container: '#kakaotalk-sharing-btn',
+          requestUrl: 'https://naver.com', //공유하고자 하는 페이지 넣기
+      });
+      </script>
+
+    <div class="copy_link">
+      <img src="images/image_2.png" class="image_2"
+      onclick="copyComplete();">
+      <p class="text_2">Copy Link</p>
+    </div>
+
+    <div class="more_icon">
+      <img src="images/image_3.png" class="image_3">
+      <p class="text_3">More</p>
+    </div>
+    <br>
+  </div>
+</div>
+
+</body>
+</html>
