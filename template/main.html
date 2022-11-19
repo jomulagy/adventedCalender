@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
+            rel="stylesheet"
+        />
+        <title>Merry Day</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="main_page">
+                <div class="writting">
+                    <div class="line">
+                        <div class="line_first"></div>
+                    </div>
+                    <h1 class="writing_first">
+                        <p>what's ur <br />mood today?</p>
+                    </h1>
+                    <div class="writing_second"><p>pick today!</p></div>
+                    <div class="line">
+                        <div class="line_second"></div>
+                    </div>
+                    <div class="line">
+                        <div class="line_third"></div>
+                    </div>
+                </div>
+                <div class="box_first">
+                    <a href="{% url 'merry_day:detail' '1' %}">
+                        <img
+                            src="{% static 'img/Box_1.png' %}"
+                             alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_1.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_1.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '2' %}">
+                        <img
+                            src="{% static 'img/Box_2.png' %}"
+                             alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_2.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_2.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '3' %}">
+                        <img
+                            src="{% static 'img/Box_3.png' %}"
+                             alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_3.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_3.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '4' %}">
+                        <img
+                            src="{% static 'img/Box_4.png' %}"
+                             alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_4.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_4.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '5' %}">
+                        <img
+                            src="{% static 'img/Box_5.png' %}"
+                             alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_5.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_5.png' %}'"
+                        />
+                    </a>
+                </div>
+                <div class="box_second">
+                    <a href="{% url 'merry_day:detail' '6' %}">
+                        <img
+                            src="{% static 'img/Box_6.png' %}"
+                             alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_6.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_6.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '7' %}">
+                        <img
+                            src="{% static 'img/Box_7.png' %}"
+                             alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_7.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_7.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '8' %}">
+                        <img
+                            src="{% static 'img/Box_8.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_8.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_8.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '9' %}">
+                        <img
+                            src="{% static 'img/Box_9.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_9.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_9.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '10' %}">
+                        <img
+                            src="{% static 'img/Box_10.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_10.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_10.png' %}'"
+                        />
+                    </a>
+                </div>
+                <div class="box_third">
+                    <a href="{% url 'merry_day:detail' '11' %}">
+                        <img
+                            src="{% static 'img/Box_11.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_11.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_11.png' %}'"
+                        />
+                    </a>
+                    <a href="{%url 'merry_day:detail' '12' %}">
+                        <img
+                            src="{% static 'img/Box_12.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_12.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_12.png' %}'"
+                        />
+                    </a>
+                    <a href="{%url 'merry_day:detail' '13' %}">
+                        <img
+                            src="{% static 'img/Box_13.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_13.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_13.png' %}'"
+                        />
+                    </a>
+                    <a href="{%url 'merry_day:detail' '14' %}">
+                        <img
+                            src="{% static 'img/Box_14.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_14.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_14.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '15' %}">
+                        <img
+                            src="{% static 'img/Box_15.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_15.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_15.png' %}'"
+                        />
+                    </a>
+                </div>
+                <div class="box_fourth">
+                    <a href="{% url 'merry_day:detail' '16' %}">
+                        <img
+                            src="{% static 'img/Box_16.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_16.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_16.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '17' %}">
+                        <img
+                            src="{% static 'img/Box_17.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_17.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_17.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '18' %}">
+                        <img src = "{% static 'img/Box_18.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_18.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_18.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '19' %}">
+                        <img
+                            src="{% static 'img/Box_19.png' %}" 
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_19.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_19.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '20' %}">
+                        <img
+                            src="{% static 'img/Box_20.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_20.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_20.png' %}'"
+                        />
+                    </a>
+                </div>
+                <div class="box_fifth">
+                    <a href="{% url 'merry_day:detail' '21' %}">
+                        <img
+                            src="{% static 'img/Box_21.png' %}"
+                          alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_21.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_21.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '22' %}">
+                        <img
+                            src="{% static 'img/Box_22.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_22.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_22.png' %}'"
+                        />
+                    </a>
+                    <a href="{%url 'merry_day:detail' '23' %}">
+                        <img
+                            src="{% static 'img/Box_23.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_23.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_23.png' %}'"
+                        />
+                    </a>
+                    <a href="{% url 'merry_day:detail' '24' %}">
+                        <img
+                            src="{% static 'img/Box_24.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_24.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_24.png' %}'"
+                        />
+                    </a>
+                    <a href="{%url 'merry_day:detail' '25' %}">
+                        <img
+                            src="{% static 'img/Box_25.png' %}"
+                            alt=""
+                            onmouseover="this.src = '{% static 'img/OverBox_25.png' %}'"
+                            onmouseout="this.src = '{% static 'img/Box_25.png' %}'"
+                        />
+                    </a>
+                </div>
+                <div class="line">
+                    <div class="line_fourth"></div>
+                </div>
+                <div class="writing_third">
+                    <p>- likelion year-end hackathon -</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

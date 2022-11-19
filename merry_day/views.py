@@ -9,7 +9,7 @@ def login(request):
     
 def main(request):
 
-    return render(request, "test.html")
+    return render(request, "main.html")
 
 def card_detail(request, date):
     user = request.user

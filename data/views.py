@@ -45,7 +45,8 @@ def get_user_content(user_id, date):
 def create_contents(user_id):
     today = datetime.today()
     user = User.objects.get(id = user_id)
-    if Movie.objects.filter(user = user, date = today)!= None or Music_content.objects.filter(user = user, date = today) != None:
+
+    if Movie.objects.filter(user = user, date = today).exists() or Music_content.objects.filter(user = user, date = today).exists():
         return
     num = random.randint(0,1)
     if num == 0 :
