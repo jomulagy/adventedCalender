@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
+
+body{
+  background-color: #193105;
+}
+
+section{
+  margin: 0 auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 67px;
+  width: 375px;
+  height: 812px;
+  text-align: center;
+  background-color: #193105;
+}
+div{
+  margin: 0 auto;
+}
+.movie-title{
+  width: 347px;
+  height: 99px;
+  font-size: 40px;
+  font-family: 'Yeseva One', cursive;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.song-img{
+  margin-top: 13px;
+  width: 346px;
+  height: 414px;
+}
+.up-hr{
+  margin-top: 30px;
+  width: 345px;
+  border-left: 0px;
+  border-right: 0px;
+}
+.movie-name{
+  margin-top:3px;
+  width: 191px;
+  height: 50px;
+  font-size: 20px;
+  font-family: 'Yeseva One', cursive;
+  color: #FFFFFF;
+}
+.down-hr{
+  margin-top: 3px;
+  width: 345px;
+  border-left: 0px;
+  border-right: 0px;
+}
+.star{
+  display: inline-block;
+  margin-top: 38px;
+  margin-right: 55px;
+  font-family: 'Yeseva One', cursive;
+  color: #FFFFFF;
+}
+#back{
+  display: inline-block;
+  text-decoration: underline;
+  margin-right: 55px;
+  font-family: 'Yeseva One', cursive;
+  color: #FFFFFF;
+}
+#share{
+  display: inline-block;
+  margin-top: 77px;
+  text-decoration: underline;
+  font-family: 'Yeseva One', cursive;
+  color: #FFFFFF;
+}
+.actor{
+  font-size: 13px;
+  font-family: 'Yeseva One', cursive;
+  color: #FFFFFF;
+}
+hr{
+  width: 338px;
+  padding: 0.3px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+/* share_02.html 적용 css */
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
+* {
+  margin : 0;
+  padding : 0;
+  background-color: #193105;
+  box-sizing: border-box;
+}
+
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.share_container {
+  width: 100%;
+  height: 100%;
+  width: 375px;
+  height: 165px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  justify-content: space-around;
+  align-content: space-around;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.share_font {
+  align-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000000;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size: 50;
+  text-align: center;
+  
+}
+
+a {
+  text-decoration-line: none;
+  color: black;
+}
+
+hr {
+  position: absolute;
+  color: #000000;
+  width: 100%;
+}
+
+.top {
+  background-color: #ffffff;
+}
+
+.text_0 {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size: 15px;
+  position: absolute;
+  top: 5%;
+  left: 45%;
+  color: black;
+  background-color: #ffffff;
+}
+
+.bottom {
+  width: 375px;  
+  background-color: #ffffff;
+}
+
+.kakao_icon {
+  margin-left: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  float: left;
+}
+
+.copy_link {
+  margin-left: 30px;
+  background-color: #ffffff;
+  text-align: center;
+  float: left;
+}
+
+.more_icon {
+  margin-left: 30px;
+  background-color: #ffffff;
+  text-align: center;
+  float: left;
+}
+
+.image_1 {
+  background-color: #ffffff;
+}
+
+.image_2 {
+  background-color: #ffffff;
+}
+
+.image_3 {
+  background-color: #ffffff;
+}
+
+.text_1 {
+  color: black;
+  font-size: 15px;
+  background-color: #ffffff;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.text_2 {
+  color: black;
+  font-size: 15px;
+  background-color: #ffffff;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.text_3 {
+  color: black;
+  font-size: 15px;
+  background-color: #ffffff;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+/* 팝업 적용 css */
+body {
+  color: #333;
+  font-family: Lato;
+  font-weight: 300;
+  text-align: center;
+  background: #333;
+}
+.container > .btn {
+  margin: 60px;
+  padding: 20px 40px;
+  font-size: 30px;
+  border-radius: 40px;
+}
+.modal {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+  top: 100%;
+  position: fixed;
+  left: 0;
+  text-align: left;
+  .header {
+    padding:20px;
+    border-bottom: 1px solid #ddd;
+    font: 300 24px Lato;
+    position: relative;
+    }
+  .body {
+    padding: 20px;
+    font: 300 16px Lato;
+  }
+}
+
+.btn {
+   background: linear-gradient(to right, rgb(220, 227, 91), rgb(69, 182, 73));
+  padding: 10px 25px;
+  display: inline-block;
+  border-radius: 25px;
+  margin: 20px 0;
+  color: #fff;
+  position: relative;
+  transition: all .4s ease;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+  }
+}
+
+.container.modal-open .modal {
+  top: 0;
+}
