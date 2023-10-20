@@ -6,7 +6,7 @@ from .models import MovieTitles, Movie, Music_data, Music_content
 import random
 import requests
 import time
-from datetime import datetime
+from datetime import date
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -16,10 +16,16 @@ from selenium.webdriver.common.keys import Keys
 def home(request):
     return render(request, "test.html")
 #조회하기
-def get_user_content(user_id, date):
+def get_user_content(user_id, day):
     user = User.objects.get(id = user_id)
-    if user.Movie.filter(date__day = str(date)).exists():
-        content = user.Movie.filter(date__day = str(date))[0]
+    today = date.today()
+    d = date(today.year,today.month,day)
+    print(d)
+    if not user.Movie.filter(date = str(d)).exists() and not user.Music.filter(date = str(d)).exists():
+        create_contents(user.id,d)
+
+    if user.Movie.filter(date = str(d)).exists():
+        content = user.Movie.filter(date = str(d))[0]
         context = {
             "type" : "movie",
             "image" : content.image,
@@ -30,8 +36,8 @@ def get_user_content(user_id, date):
             "date" : date,
         }
         
-    elif user.Music.filter(date__day = str(date)).exists():
-        content = user.Music.filter(date__day = str(date))[0]
+    elif user.Music.filter(date = str(d)).exists():
+        content = user.Music.filter(date = str(d))[0]
         context = {
             "type" : "music",
             "image" : content.image,
@@ -40,14 +46,16 @@ def get_user_content(user_id, date):
             "link" : content.link,
             "date" : date,
         }
+
     
     return context
 
 #새로 만들기
-def create_contents(user_id):
-    today = datetime.today()
+def create_contents(user_id,day):
     user = User.objects.get(id = user_id)
-    if Movie.objects.filter(user = user, date__day = today.day).exists() or Music_content.objects.filter(user = user, date__day = today.day).exists():
+
+    if Movie.objects.filter(user = user, date = day).exists() or Music_content.objects.filter(user = user, date = day).exists():
+        print("content already exists")
         return
 
     num = random.randint(0,1)
@@ -62,6 +70,7 @@ def create_contents(user_id):
         new.actors = data['actors']
         new.year = data['date']
         new.rating = data['rating']
+        new.date = day
         new.save()
     else:
         new = Music_content()
@@ -71,7 +80,10 @@ def create_contents(user_id):
         new.image = data['image']
         new.director = data['artist']
         new.link = data["link"]
+        new.date = day
         new.save()
+        print(day)
+        print("music created")
     return
 
 def get_titles():
@@ -124,14 +136,15 @@ def get_titles():
 
 def get_movie():
     actr = ''
+    client_id = "spNIjHnbCNDW7Ut01fOH"
+    client_secret = "xhANxLlkDd"
     while True:
-        client_id = "WBizd3AjzRS6rm8IoYHJ"
-        client_secret = "ptArHpcM6x"
+
 
         num = random.randint(1,300)
         title = MovieTitles.objects.get(id = num).title
 
-        movie = title
+        movie = title.encode("utf-8")
         header_parms = {
             "X-Naver-Client-Id" : client_id,
             "X-Naver-Client-Secret" : client_secret

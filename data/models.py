@@ -6,7 +6,7 @@ class MovieTitles(models.Model):
 
 class Movie(models.Model):
     user = models.ForeignKey(User ,on_delete=models.CASCADE,related_name = "Movie")
-    date = models.DateTimeField(auto_now_add = True)
+    date = models.DateField()
     title = models.CharField(max_length=100, null = False, default = '')
     image = models.ImageField(upload_to= 'movies')
     director = models.CharField(null = False, max_length = 200)
@@ -23,7 +23,7 @@ class Music_data(models.Model):
 
 class Music_content(models.Model):
     user = models.ForeignKey(User ,on_delete=models.CASCADE,related_name="Music")
-    date = models.DateTimeField(auto_now_add = True)
+    date = models.DateField()
     title = models.CharField(max_length=100, null = False, default = '')
     image = models.ImageField(upload_to= 'movies')
     director = models.CharField(null = False, max_length = 200)

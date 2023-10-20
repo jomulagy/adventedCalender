@@ -263,7 +263,7 @@
             var now = new Date();
             var date = now.getDate();
             var id = target.getAttribute("id");
-            if(id == date){
+            if(id <= date){
                 location.href="/card_detail/"+id;
             }
         }));
